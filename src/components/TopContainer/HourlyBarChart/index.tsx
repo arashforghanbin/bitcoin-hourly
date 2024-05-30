@@ -15,7 +15,7 @@ import {
 import { Bar } from "react-chartjs-2";
 
 const HourlyBarChart = () => {
-  const hourlyData = useBarChartData();
+  const { hourlyData } = useBarChartData();
 
   ChartJS.register(
     CategoryScale,

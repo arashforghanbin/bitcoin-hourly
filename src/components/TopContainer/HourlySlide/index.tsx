@@ -37,7 +37,6 @@ const HourlySlide = () => {
         modules={[Pagination, Autoplay]}
         className="mySwiper"
         autoplay={{ delay: 2500, disableOnInteraction: false }}
-        loop={true}
       >
         {hourlyData &&
           hourlyData.map((item, index) => (
