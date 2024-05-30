@@ -10,13 +10,37 @@ const useOHLCVData = () => {
   const [minHigh, setMinHigh] = useState<any>(undefined);
   const [maxLow, setMaxLow] = useState<any>(undefined);
 
-  const getHourlyPairOHLCV = async () => {
-    const res = await axios.get(
+  const fetchAPI = async () => {
+    return await axios.get(
       "https://min-api.cryptocompare.com/data/v2/histohour?fsym=BTC&tsym=USD&limit=10"
     );
-    if (res.status === 200) {
-      const slicedData = res.data.Data.Data.slice(-nLastElemetns);
+  };
+
+  const getHourlyPairOHLCV = async () => {
+    let slicedData: any;
+    const now = Date.now();
+    if (localStorage.getItem("OHLCVData")) {
+      const data = JSON.parse(`${localStorage.getItem("OHLCVData")}`);
+      if (data) {
+        slicedData = data.slicedData;
+        if (now - data.expiryDate > 1000 * 60 * 60) {
+          slicedData = (await fetchAPI()).data.Data.Data.slice(-nLastElemetns);
+          localStorage.setItem(
+            "OHLCVData",
+            JSON.stringify({ expiryDate: now, slicedData })
+          );
+        }
+      }
+    } else {
+      slicedData = (await fetchAPI()).data.Data.Data.slice(-nLastElemetns);
+      localStorage.setItem(
+        "OHLCVData",
+        JSON.stringify({ expiryDate: now, slicedData })
+      );
+    }
+    if (slicedData) {
       setHourlyData(slicedData);
+
       const maxHighObj = slicedData.reduce((max: any, obj: any) => {
         return obj.high > max.high ? obj : max;
       }, slicedData[0]);
@@ -41,6 +65,7 @@ const useOHLCVData = () => {
 
   useEffect(() => {
     getHourlyPairOHLCV();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return { hourlyData, maxHigh, minLow, minHigh, maxLow };

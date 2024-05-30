@@ -14,3 +14,21 @@
 .swiper-pagination-bullet-active {
   background-color: #11b89b !important;
 }
+
+@media screen and (min-width: 899.5px) and (max-width: 1080px) {
+  .hourlySlide {
+    width: 30%;
+  }
+}
+
+@media screen and (min-width: 360px) and (max-width: 900px) {
+  .hourlySlide {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .hourlySlide {
+    width: 100%;
+  }
+}

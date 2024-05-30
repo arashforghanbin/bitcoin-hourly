@@ -1,4 +1,4 @@
-import useOHLCVData from "../TopContainer/HourlyBarChart/hourlyBarChart.func";
+import useOHLCVData from "../hooks/hourlyBarChart.func";
 import "./bottomContainer.style.scss";
 import { unixToHourAndMinute } from "../../utils/timesStampConvertor";
 

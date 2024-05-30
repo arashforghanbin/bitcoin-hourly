@@ -1,6 +1,6 @@
 import { unixToHourAndMinute } from "../../../utils/timesStampConvertor";
-import "./hourlyBarChart.style.scss";
-import useBarChartData from "./hourlyBarChart.func";
+import "./hourlyOHLCVBarChart.style.scss";
+import useBarChartData from "../../hooks/hourlyBarChart.func";
 
 import {
   Chart as ChartJS,
@@ -14,7 +14,7 @@ import {
 
 import { Bar } from "react-chartjs-2";
 
-const HourlyBarChart = () => {
+const HourlyOHLCVBarChart = () => {
   const { hourlyData } = useBarChartData();
 
   ChartJS.register(
@@ -94,4 +94,4 @@ const HourlyBarChart = () => {
   );
 };
 
-export default HourlyBarChart;
+export default HourlyOHLCVBarChart;

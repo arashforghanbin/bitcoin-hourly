@@ -1,4 +1,4 @@
-import HourlyBarChart from "./HourlyBarChart";
+import HourlyBarChart from "./HourlyOHLCVBarChart";
 import HourlySlide from "./HourlySlide";
 import "./topContainer.style.scss";
 

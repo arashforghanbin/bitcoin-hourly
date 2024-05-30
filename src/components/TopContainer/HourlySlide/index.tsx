@@ -1,4 +1,4 @@
-import useBarChartData from "./hourlySlide.func";
+import useBarChartData from "../../hooks/hourlySlide.func";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -18,7 +18,7 @@ import "swiper/css/pagination";
 import { unixToHourAndMinute } from "../../../utils/timesStampConvertor";
 
 const HourlySlide = () => {
-  const hourlyData = useBarChartData();
+  const hourlyExchangeVolumeData = useBarChartData();
 
   ChartJS.register(
     CategoryScale,
@@ -38,8 +38,8 @@ const HourlySlide = () => {
         className="mySwiper"
         autoplay={{ delay: 2500, disableOnInteraction: false }}
       >
-        {hourlyData &&
-          hourlyData.map((item, index) => (
+        {hourlyExchangeVolumeData &&
+          hourlyExchangeVolumeData.map((item, index) => (
             <SwiperSlide key={index} style={{ padding: "16px" }}>
               <Bar
                 options={{
