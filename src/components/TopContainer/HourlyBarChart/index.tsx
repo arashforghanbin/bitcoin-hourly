@@ -32,7 +32,14 @@ const HourlyBarChart = () => {
         borderWidth: 0,
       },
     },
-    scales: { y: { beginAtZero: false } },
+    scales: {
+      y: {
+        grid: { drawTicks: false },
+        beginAtZero: false,
+        border: { dash: [4, 4] },
+      },
+      x: { grid: { display: false } },
+    },
     responsive: true,
     plugins: {
       legend: {
@@ -42,7 +49,6 @@ const HourlyBarChart = () => {
           borderRadius: 8,
           boxWidth: 16,
           boxHeight: 16,
-          boxBorderRadius: "50%",
         },
       },
       title: {
@@ -82,39 +88,7 @@ const HourlyBarChart = () => {
 
   return (
     <section className="hourlyBarChart">
-      <Bar
-        options={{
-          elements: {
-            bar: {
-              borderWidth: 0,
-            },
-          },
-          scales: {
-            y: {
-              grid: { drawTicks: false },
-              beginAtZero: false,
-              border: { dash: [4, 4] },
-            },
-            x: { grid: { display: false } },
-          },
-          responsive: true,
-          plugins: {
-            legend: {
-              position: "bottom" as const,
-              labels: {
-                useBorderRadius: true,
-                borderRadius: 8,
-                boxWidth: 16,
-                boxHeight: 16,
-              },
-            },
-            title: {
-              display: false,
-            },
-          },
-        }}
-        data={data}
-      />
+      <Bar options={options} data={data} />
     </section>
   );
 };
