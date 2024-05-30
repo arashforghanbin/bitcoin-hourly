@@ -1,0 +1,16 @@
+.topContainer {
+  display: flex;
+  gap: 8px;
+}
+
+@media screen and (min-width: 359.5px) and (max-width: 900px) {
+  .topContainer {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .topContainer {
+    flex-direction: column;
+  }
+}

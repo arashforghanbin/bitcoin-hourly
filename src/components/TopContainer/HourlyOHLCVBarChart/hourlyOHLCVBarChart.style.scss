@@ -1,0 +1,26 @@
+.hourlyBarChart {
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 2px 2px 10px 0.5px #dbdbdb;
+  width: 80%;
+  padding: 32px;
+  min-height: 500px;
+}
+
+@media screen and (min-width: 900px) and (max-width: 1080px) {
+  .hourlyBarChart {
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 359.5px) and (max-width: 900px) {
+  .hourlyBarChart {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .hourlyBarChart {
+    width: 100%;
+  }
+}
