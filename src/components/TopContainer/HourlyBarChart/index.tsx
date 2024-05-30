@@ -27,6 +27,7 @@ const HourlyBarChart = () => {
   );
 
   const options = {
+    maintainAspectRatio: false,
     elements: {
       bar: {
         borderWidth: 0,

@@ -2,4 +2,15 @@
   background-color: #fff;
   border-radius: 16px;
   box-shadow: 2px 2px 10px 0.5px #dbdbdb;
+  padding: 16px;
+  width: 20%;
+}
+
+.swiper-pagination-bullet {
+  background-color: #fff !important;
+  border: 2px solid #11b89b;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #11b89b !important;
 }

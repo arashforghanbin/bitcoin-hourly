@@ -1,5 +1,6 @@
 import HourlyBarChart from "./HourlyBarChart";
 import HourlySlide from "./HourlySlide";
+import "./topContainer.style.scss";
 
 const TopContainer = () => {
   return (
