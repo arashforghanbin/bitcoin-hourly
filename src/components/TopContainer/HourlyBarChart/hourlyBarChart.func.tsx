@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 
 const nLastElemetns = 10;
 
-const useBartChartData = () => {
+const useBarChartData = () => {
   const [hourlyData, setHourlyData] = useState<any[] | undefined>(undefined);
 
   const getHourlyVolume = async () => {
@@ -25,4 +25,4 @@ const useBartChartData = () => {
   return hourlyData;
 };
 
-export default useBartChartData;
+export default useBarChartData;
