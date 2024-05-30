@@ -8,10 +8,11 @@ const useBartChartData = () => {
 
   const getHourlyVolume = async () => {
     const res = await axios.get(
-      "https://min-api.cryptocompare.com/data/exchange/histohour?tsym=BTC&limit=10"
+      "https://min-api.cryptocompare.com/data/v2/histohour?fsym=BTC&tsym=USD&limit=10"
     );
     if (res.status === 200) {
-      const slicedData = res.data.Data.slice(-nLastElemetns);
+      console.log(res);
+      const slicedData = res.data.Data.Data.slice(-nLastElemetns);
       console.log(slicedData);
       setHourlyData(slicedData);
     }
